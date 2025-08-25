@@ -21,6 +21,8 @@ LXC vs VM
 
 Setup commands, GPU Passthrough, Backups, and Cron
 
+#
+
 # Tailscale + Adguard + Caddy
 
 This part of my setup is really the heart of the project, and the piece I’m most proud of. Since I couldn’t find much documentation for this exact configuration, it was a fun challenge to figure things out on my own.
@@ -31,17 +33,25 @@ At first, I experimented with Tailscale’s Split DNS and Serve features, but I 
 
 I chose AdGuard Home over Pi-hole mainly because I had used it before, and I found it more flexible. Caddy, on the other hand, was a different story. I had originally planned to issue internal TLS certificates and run everything behind Nginx Proxy Manager. While that setup might have worked in the end, I ran into a lot of complications with getting certificates and reverse proxy rules working smoothly, especially without being publicy facing. During troubleshooting, I came across Caddy by chance, and immediately switched gears. In the end, I generated my own certificate authorities rather than relying on internal certs, but even then, Caddy made the entire process far smoother than my experience with Nginx Proxy Manager.
 
+#
+
 # Nextcloud
 
 Immich takes care of my photo backups, but I also wanted to deploy Nextcloud, not just for file storage, but for its potential to enable document collaboration. There’s still plenty for me to experiment with and learn here.
+
+#
 
 # Vaultwarden
 
 This has been a long time coming. I’d been using KeePassXC for years, but never liked being tied to a local application. Vaultwarden turned out to be the perfect replacement solution with everything I needed from KeePassXC. Now, generating and saving passwords is handled right from my browser through the Bitwarden plugin, without the hassle of managing a separate desktop app. Vaultwarden requires HTTPS, so you definitely want to hold off on deploying this until you've set that up for your network.
 
+#
+
 # Wazuh
 
 Wazuh is a SIEM. I’ve deployed agents across all my hosts and computers, though I’m still in the process of learning the platform and exploring everything it can do.
+
+#
 
 # Portainer
 
