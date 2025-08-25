@@ -2,12 +2,12 @@
 
 Currently, I’m hosting the following services:
 
-- Immich
-- Nextcloud
-- AdGuard
-- Caddy
-- Vaultwarden
-- Wazuh
+- [Immich](#immich)
+- [Nextcloud](#nextcloud)
+- [AdGuard](#tailscale--adguard--caddy)
+- [Caddy](#tailscale--adguard--caddy)
+- [Vaultwarden](#vaultwarden)
+- [Wazuh](#wazuh)
 
 In the future, I’d like to expand into Home Assistant, though right now my house doesn’t have enough smart devices to fully justify it. I’m also interested in running the full Jellyfin media suite; Jellyfin, Gluetun, Sonarr, Radarr, Prowlarr, and qBittorrent, but that setup would require a paid VPN service, which isn’t an option for me at the moment.
 
@@ -17,9 +17,9 @@ I ended up choosing Proxmox over TrueNAS Scale because, after testing both, Prox
 
 One thing I learned too late was about RAIDZ1 vs RAIDZ2. It turns out RAIDZ1 is generally not recommended for drives larger than 2TB, and I had four 3TB drives in my pool. This is because in the event of drive failure, the resilvering process takes much longer on a larger drive. During that time, the chance of encountering an issue increases significantly, which would then cause the rebuild to fail and result in data loss. RAIDZ2 provides an extra layer of redundancy by allowing two drives to fail before the pool is at risk, which makes it far safer for larger capacity disks.
 
-LXC vs VM
+# Immich
 
-Setup commands, GPU Passthrough, Backups, and Cron
+Aside from Jellyfin (which I’m not currently running), this is one of the applications that justifies having a home server on its own. At this point, it feels essential to keep it running here.
 
 # Tailscale + Adguard + Caddy
 
