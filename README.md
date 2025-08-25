@@ -5,16 +5,16 @@ This is the documentation for my homelab project. Here, I’ll explain the reaso
 The biggest thing I'm proud of with this server is, despite being a homelab, I was actually able to set it up to be remotely accessible from anywhere without being public facing
 ## Hardware
 
-Mini PC | Proxmox
-NAB 6 Lite
-Intel i5-12600H
-12 Cores (4 Performance-cores, 8 Efficient-cores) / 16 Threads
-2x16 DDR4-3200MHz SODIMM
-512GB M.2 2280 PCIe 4.0 
+- Mini PC | Proxmox
+	- NAB 6 Lite
+		- Intel i5-12600H
+			- 12 Cores (4 Performance-cores, 8 Efficient-cores) / 16 Threads
+		- 2x16 DDR4-3200MHz SODIMM
+		- 512GB M.2 2280 PCIe 4.0 
 
-DAS
-SABRENT 4-Bay USB 3.2 Gen 2 SATA DAS
-x4 WD Red Plus HDD
+- DAS
+	- SABRENT 4-Bay USB 3.2 Gen 2 SATA DAS
+		- x4 WD Red Plus HDD
 
 Before starting, I had a few clear goals: I wanted a low-power machine capable of running either TrueNAS Scale or Proxmox, with enough performance to handle multiple services with GPU hardware acceleration, possibly for multiple users as I wanted to keep my family in mind. Building a $1,000 custom low-power microATX system wasn’t realistic for my budget, so I turned to Mini PCs as an alternative. Many people recommended models with Intel’s N100 chip, but I opted for a refurbished Mini PC with an i5 that I found on eBay for a pretty good price. This gave me more confidence in overhead performance compared to the N100, which, while efficient, was less powerful.
 
