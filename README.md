@@ -2,6 +2,16 @@
 
 This is the documentation for my homelab project. Here, I’ll explain the reasoning behind my setup decisions, the applications I chose to deploy, and the steps I took to configure them. I’m still learning as I go, so this serves not only as a reference in case something breaks, but also as a resource for anyone else stubborn enough to piece together a functional homelab from scratch.
 
+# Index
+
+- Services
+	- Proxmox
+		- Immich
+		- Tailscale + Adguard + Caddy
+		- Nextcloud
+		- Vaultwarden
+		- Wazuh
+
 The biggest thing I'm proud of with this server is, despite being a homelab, I was actually able to set it up to be remotely accessible from anywhere without being public facing
 ## Hardware
 
