@@ -6,13 +6,13 @@ This project allows me to securely access every service I host, like my personal
 
 # Index
 
-- Services
-	- Proxmox
-		- Immich
-		- Tailscale + Adguard + Caddy
-		- Nextcloud
-		- Vaultwarden
-		- Wazuh
+- [Services](https://github.com/labdotcollins/homelab/blob/main/services/README.md)
+	- [Proxmox](https://github.com/labdotcollins/homelab/blob/main/services/README.md#immich)
+		- [Immich](https://github.com/labdotcollins/homelab/blob/main/services/README.md#immich)
+		- [Tailscale + Adguard + Caddy](https://github.com/labdotcollins/homelab/blob/main/services/README.md#tailscale--adguard--caddy)
+		- [Nextcloud](https://github.com/labdotcollins/homelab/blob/main/services/README.md#nextcloud)
+		- [Vaultwarden](https://github.com/labdotcollins/homelab/blob/main/services/README.md#vaultwarden)
+		- [Wazuh](https://github.com/labdotcollins/homelab/blob/main/services/README.md#wazuh)
 
 ## Hardware
 
