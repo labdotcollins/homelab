@@ -2,6 +2,9 @@
 
 This is the documentation for my homelab project. Here, I’ll explain the reasoning behind my setup decisions, the applications I chose to deploy, and the steps I took to configure them. I’m still learning as I go, so this serves not only as a reference in case something breaks, but also as a resource for anyone else stubborn enough to piece together a functional homelab from scratch.
 
+**This project allows me to securely access every service I host, like my personal cloud storage and photo backups, through custom domain names over HTTPS. I use self-signed certificates that my devices and browsers trust, so I don’t get any security warnings. Best of all, I can connect from anywhere while keeping everything completely off the public internet.
+**
+
 # Index
 
 - Services
@@ -12,7 +15,6 @@ This is the documentation for my homelab project. Here, I’ll explain the reaso
 		- Vaultwarden
 		- Wazuh
 
-The biggest thing I'm proud of with this server is, despite being a homelab, I was actually able to set it up to be remotely accessible from anywhere without being public facing
 ## Hardware
 
 - Mini PC | Proxmox
