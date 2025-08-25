@@ -27,6 +27,8 @@ This project allows me to securely access every service I host, like my personal
 	- SABRENT 4-Bay USB 3.2 Gen 2 SATA DAS
 		- x4 WD Red Plus HDD
 
+#
+
 Before starting, I had a few clear goals: I wanted a low-power machine capable of running either TrueNAS Scale or Proxmox, with enough performance to handle multiple services with GPU hardware acceleration, possibly for multiple users as I wanted to keep my family in mind. Building a $1,000 custom low-power microATX system wasn’t realistic for my budget, so I turned to Mini PCs as an alternative. Many people recommended models with Intel’s N100 chip, but I opted for a refurbished Mini PC with an i5 that I found on eBay for a pretty good price. This gave me more confidence in overhead performance compared to the N100, which, while efficient, was less powerful.
 
 I also considered a few different storage configurations, including adapting the onboard M.2 slot on the NAB 6 Lite into SATA to support four drives. In the end, I went with a simpler, and more expensive, DAS solution. My Mini PC connects to the DAS through a USB 3.1 Gen 2 (10 Gbit) port, which provides more flexibility and performance for my setup.
