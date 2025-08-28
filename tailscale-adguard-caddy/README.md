@@ -1,3 +1,15 @@
+# Index
+
+- [Deploying Adguard](#deploying-adguard)
+- [Tailscale](#tailscale)
+- [Generating the CAs](#generating-the-cas)
+    - [Root CA](#root-ca)
+    - [Intermediate CA](#intermediate-ca)
+    - [Signing](#signing)
+- [Deploying Caddy](#deploying-caddy)
+    - [Caddyfile](#caddyfile)
+    - [Caddy](#caddy)
+
 # Deploying Adguard
 
 Edit the provided adguard-compose.yaml as needed for your use case.
