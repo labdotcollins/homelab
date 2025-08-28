@@ -1,5 +1,13 @@
 # Services
 
+# [Proxmox](https://github.com/labdotcollins/homelab/tree/main/proxmox/README.md)
+
+I ended up choosing Proxmox over TrueNAS Scale because, after testing both, Proxmox felt far more versatile. At one point, I even tried running TrueNAS Scale inside Proxmox, creating a ZFS storage pool in TrueNAS and then passing it to Proxmox, but that felt like problems just waiting to happen. Since I didn’t really see the benefit of running containers or VMs inside TrueNAS on top of Proxmox, I eventually scrapped it. Instead, I set up a Samba share in a container, mounting my ZFS pool directly there.
+
+One thing I learned too late was about RAIDZ1 vs RAIDZ2. It turns out RAIDZ1 is generally not recommended for drives larger than 2TB, and I had four 3TB drives in my pool. This is because in the event of drive failure, the resilvering process takes much longer on a larger drive. During that time, the chance of encountering an issue increases significantly, which would then cause the rebuild to fail and result in data loss. RAIDZ2 provides an extra layer of redundancy by allowing two drives to fail before the pool is at risk, which makes it far safer for larger capacity disks.
+
+Linked above is the setup guide.
+
 Currently, I’m hosting the following services:
 
 - [Immich](#immich)
@@ -11,15 +19,11 @@ Currently, I’m hosting the following services:
 
 In the future, I’d like to expand into Home Assistant, though right now my house doesn’t have enough smart devices to fully justify it. I’m also interested in running the full Jellyfin media suite; Jellyfin, Gluetun, Sonarr, Radarr, Prowlarr, and qBittorrent, but that setup would require a paid VPN service, which isn’t an option for me at the moment.
 
-# [Proxmox](https://github.com/labdotcollins/homelab/tree/main/proxmox/README.md)
-
-I ended up choosing Proxmox over TrueNAS Scale because, after testing both, Proxmox felt far more versatile. At one point, I even tried running TrueNAS Scale inside Proxmox, creating a ZFS storage pool in TrueNAS and then passing it to Proxmox, but that felt like problems just waiting to happen. Since I didn’t really see the benefit of running containers or VMs inside TrueNAS on top of Proxmox, I eventually scrapped it. Instead, I set up a Samba share in a container, mounting my ZFS pool directly there.
-
-One thing I learned too late was about RAIDZ1 vs RAIDZ2. It turns out RAIDZ1 is generally not recommended for drives larger than 2TB, and I had four 3TB drives in my pool. This is because in the event of drive failure, the resilvering process takes much longer on a larger drive. During that time, the chance of encountering an issue increases significantly, which would then cause the rebuild to fail and result in data loss. RAIDZ2 provides an extra layer of redundancy by allowing two drives to fail before the pool is at risk, which makes it far safer for larger capacity disks.
-
 # [Immich](https://github.com/labdotcollins/homelab/tree/main/immich/README.md)
 
-Aside from Jellyfin (which I’m not currently running), this is one of the applications that justifies having a home server on its own. At this point, it feels essential to keep it running here.
+This is a selfhosted photo backup that gives similar functionality to Apple Photos. Aside from Jellyfin (which I’m not currently running), this is one of the applications that justifies having a home server on its own. At this point, it feels essential to keep it running here.
+
+Linked above is the setup guide.
 
 # [Tailscale + Adguard + Caddy](https://github.com/labdotcollins/homelab/tree/main/tailscale-adguard-caddy/README.md)
 
@@ -31,17 +35,27 @@ At first, I experimented with Tailscale’s Split DNS and Serve features, but I 
 
 I chose AdGuard Home over Pi-hole mainly because I had used it before, and I found it more flexible. Caddy, on the other hand, was a different story. I had originally planned to issue internal TLS certificates and run everything behind Nginx Proxy Manager. While that setup might have worked in the end, I ran into a lot of complications with getting certificates and reverse proxy rules working smoothly, especially without being publicy facing. During troubleshooting, I came across Caddy by chance, and immediately switched gears. In the end, I generated my own certificate authorities rather than relying on internal certs, but even then, Caddy made the entire process far smoother than my experience with Nginx Proxy Manager.
 
+Linked above is the setup guide.
+
 # [Nextcloud](https://github.com/labdotcollins/homelab/tree/main/nextcloud/README.md)
 
 Immich takes care of my photo backups, but I also wanted to deploy Nextcloud, not just for file storage, but for its potential to enable document collaboration. There’s still plenty for me to experiment with and learn here.
+
+Linked above is the setup guide.
 
 # [Vaultwarden](https://github.com/labdotcollins/homelab/tree/main/vaultwarden/README.md)
 
 This has been a long time coming. I’d been using KeePassXC for years, but never liked being tied to a local application. Vaultwarden turned out to be the perfect replacement solution with everything I needed from KeePassXC. Now, generating and saving passwords is handled right from my browser through the Bitwarden plugin, without the hassle of managing a separate desktop app. Vaultwarden requires HTTPS, so you definitely want to hold off on deploying this until you've set that up for your network.
 
+Linked above is the setup guide.
+
 # [Wazuh](https://github.com/labdotcollins/homelab/tree/main/wazuh/README.md)
 
 Wazuh is a SIEM. I’ve deployed agents across all my hosts and computers, though I’m still in the process of learning the platform and exploring everything it can do.
+
+Linked above is the setup guide.
+
+# No longer running...
 
 # Portainer
 
